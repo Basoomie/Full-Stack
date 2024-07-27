@@ -1,0 +1,32 @@
+###
+GET http://localhost:3000/
+
+###
+GET http://localhost:3000/books
+
+###
+GET http://localhost:3000/books/66a3a98bda0825a804348de0
+
+###
+POST http://localhost:3000/books/create
+Content-Type: application/json
+
+{
+    "title": "Book Title",
+    "author": "Book Author",
+    "publishYear": 2020
+}
+
+###
+DELETE http://localhost:3000/books/delete/66a3a989da0825a804348dde
+
+
+###
+PUT  http://localhost:3000/books/update/66a3a98bda0825a804348de0
+Content-Type: application/json
+
+{
+    "title": "Updated Title",
+    "author": "Updated Author",
+    "publishYear": "2024"
+}
