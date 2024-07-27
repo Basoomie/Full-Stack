@@ -6,6 +6,13 @@ const Books = require("./models/book.js");
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(
+	cors({
+		origin: "http://localhost:3000",
+		methods: ["GET", "POST", "PUT", "DELETE"],
+		allowedHeaders: ["Content-Type"],
+	})
+);
 
 const books = require("./routes/booksRoute.js");
 app.use(books);
