@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import BookRoutes from "./routes/BookRoute"
+import NotFound from "./pages/NotFound"
 
 
 const router = createBrowserRouter([
@@ -10,6 +11,10 @@ const router = createBrowserRouter([
   {
     path: 'books',
     children: BookRoutes
+  },
+  {
+    path: "*",
+    element: <NotFound />
   }
 ])
 

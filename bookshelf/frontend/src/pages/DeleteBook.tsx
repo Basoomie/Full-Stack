@@ -42,7 +42,7 @@ export default function DeleteBook() {
   return (
     <div className='h-screen'>
       <button onClick={() => {
-        navigate("/books", {replace: true, state: {book: book, message: "deletion canceled"}})
+        navigate("/books", {replace: true, state: {book: book, message: "Deletion Canceled"}})
       }} className='text-4xl p-4 hover:text-blue-300 duration-200'><MdOutlineKeyboardBackspace /></button>
       <div className='flex flex-col justify-center'>
         <div className='flex flex-col gap-12 border-4 rounded-lg border-slate-400 mx-auto px-28 py-16'>
