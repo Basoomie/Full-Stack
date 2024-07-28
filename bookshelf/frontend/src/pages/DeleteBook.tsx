@@ -13,16 +13,12 @@ type Book = {
 export default function DeleteBook() {
   const {id} = useParams()
   const navigate = useNavigate()
-  const [message, setMessgae] = useState<string>("Test")
   const [book, setBook] = useState<Book>()
 
   function deleteBook() {
-    axios.get(`http://localhost:3000/books/delete/${id}`)
+    axios.delete(`http://localhost:3000/books/delete/${id}`)
     .then(res => {
-      console.log(res)
-      setTimeout(() => {
-        returnToBookList()
-      }, 2000)
+      navigate("/books", {replace: true, state: {book: book, message: res.data}})
     })
     .catch(err => {
       console.log(err)
@@ -37,10 +33,6 @@ export default function DeleteBook() {
     .catch(err => {
       console.log(err)
     })
-  }
-
-  function returnToBookList() {
-    navigate("/books", {replace: true, state: {book: book, message: message}})
   }
 
   useEffect(() => {

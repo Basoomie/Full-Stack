@@ -1,7 +1,9 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { FaTrash, FaEdit, FaInfoCircle } from "react-icons/fa";
+import { IoMdAdd } from "react-icons/io";
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import AddBook from './AddBook';
 
 type Book = {
     title: string,
@@ -37,8 +39,12 @@ export default function BookList() {
 
     return (
         <div className='flex flex-col gap-6'>
-            <button onClick={getBooks} className='mt-16 mb-16 mx-auto p-3 border-2 rounded-md hover:text-slate-200 hover:bg-slate-900 duration-200'>Refresh Books</button>
-            <div className='grid w-3/5 mx-auto overflow-x-auto relative'>
+            {/* <button onClick={getBooks} className='mt-16 mb-16 mx-auto p-3 border-2 rounded-md hover:text-slate-200 hover:bg-slate-900 duration-200'>Refresh Books</button> */}
+            <div className='flex justify-between text-4xl mx-auto mt-16 w-3/5'>
+                <h1 className=''>Book List</h1>
+                <NavLink to={"create"} className="border-2 p-1 border-gray-400 hover:border-green-400 hover:text-green-400 hover:text-3xl duration-300"><IoMdAdd /></NavLink>
+            </div>
+            <div className='grid w-3/5 mx-auto mt-2 overflow-x-auto relative'>
                 <table className='text-sm sm:text-md text-left rtl:text-right text-gray-500 dark:text-gray-400'>
                     <thead className='text-xs uppercase bg-gray-900'>
                         <tr>
