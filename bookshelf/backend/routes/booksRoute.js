@@ -49,7 +49,7 @@ router.put("/books/update/:id", async (req, res) => {
 router.delete("/books/delete/:id", async (req, res) => {
 	try {
 		await Books.deleteOne({ _id: req.params.id });
-		res.send("Book Deleted Successfully");
+		res.send(" Deleted Successfully");
 	} catch (error) {
 		res.status(500).send({ message: error.message });
 	}

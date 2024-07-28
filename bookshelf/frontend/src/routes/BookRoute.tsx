@@ -5,29 +5,28 @@ import DeleteBook from "../pages/DeleteBook"
 import BookDetails from "../pages/BookDetails"
 
 
-const BookRoutes = 
+const BookRoutes = [
   {
-    path: "/",
+    index: true,
     element: <BookList />,
-    children: [
-      {
-        path: "create",
-        element: <AddBook />
-      },
-      {
-        path: "update/:id",
-        element: <UpdateBook />
-      },
-      {
-        path: "delete/:id",
-        element: <DeleteBook />
-      },
-      {
-        path: ":id",
-        element: <BookDetails />
-      }
-    ]
+  },
+  {
+    path: "create",
+    element: <AddBook />
+  },
+  {
+    path: "update/:id",
+    element: <UpdateBook />
+  },
+  {
+    path: "delete/:id",
+    element: <DeleteBook />
+  },
+  {
+    path: ":id",
+    element: <BookDetails />
   }
+]
 
 
 export default BookRoutes

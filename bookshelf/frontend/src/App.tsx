@@ -9,14 +9,16 @@ const router = createBrowserRouter([
   },
   {
     path: 'books',
-    children: [BookRoutes]
+    children: BookRoutes
   }
 ])
 
 function App() {
 
   return (
-    <RouterProvider router={router} />
+    <main className="h-screen text-white bg-gradient-to-r from-slate-600 to-slate-800">
+      <RouterProvider router={router} />
+    </main>
   )
 }
 
