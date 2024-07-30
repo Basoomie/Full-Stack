@@ -8,6 +8,12 @@ router.get("/books", async (req, res) => {
 	res.send(books);
 });
 
+// Get single book
+router.get("/books/:id", async (req, res) => {
+	const book = await Books.findById(req.params.id);
+	res.send(book);
+});
+
 // create a new book
 router.post("/books/create", async (req, res) => {
 	if (!req.body.title || !req.body.author || !req.body.publishYear) {
@@ -53,12 +59,6 @@ router.delete("/books/delete/:id", async (req, res) => {
 	} catch (error) {
 		res.status(500).send({ message: error.message });
 	}
-});
-
-// Get single book
-router.get("/books/:id", async (req, res) => {
-	const book = await Books.findById(req.params.id);
-	res.send(book);
 });
 
 module.exports = router;
